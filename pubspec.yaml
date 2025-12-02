@@ -1,0 +1,39 @@
+name: receipes
+description: "A new Flutter project."
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/3910.webp
+    - assets/images/200304_Olive_PadThai-ebe0f22-scaled.webp
+    - assets/images/OLI-0519-Healthy_GreenThaiFishCurry_32208-c3cee9a.webp
+    - assets/images/p110-20250121rps2352pumpkincurrypreview-8534543.webp
+
+
+
+
+
+
+
+
