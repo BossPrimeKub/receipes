@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -23,16 +24,30 @@ flutter:
 
   uses-material-design: true
 
-
   assets:
     - assets/images/3910.webp
     - assets/images/200304_Olive_PadThai-ebe0f22-scaled.webp
     - assets/images/OLI-0519-Healthy_GreenThaiFishCurry_32208-c3cee9a.webp
-    - assets/images/p110-20250121rps2352pumpkincurrypreview-8534543.webp
+    - assets/images/p1.webp
 
-
-
-
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 800
 
 
 

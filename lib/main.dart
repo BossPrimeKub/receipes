@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'model/receipe.dart';
+import 'model/recipe.dart';
+import 'recipe_detail.dart';
+
+
 
 void main() {
   runApp(const RecipeApp());
@@ -12,12 +15,7 @@ class RecipeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-
-        appBarTheme: const AppBarTheme(
-          centerTitle: true,
-        ),
-      ),
+      theme: ThemeData(appBarTheme: const AppBarTheme(centerTitle: true)),
       home: const MyHomePage(title: 'Recipe Calculator'),
     );
   }
@@ -32,38 +30,57 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: Text(widget.title)
-      ),
-      body: SafeArea(child: Container(
-        child: ListView.builder(
-          itemCount: Recipe.samples.length,
-          itemBuilder: (BuildContext context, int index) {
-            // itemBuilder will work as for loop to generate list item
-            // return a widget for each item list
-            return buildRecipeCard(Recipe.samples[index]); //call functions
-          },
+      appBar: AppBar(backgroundColor: Colors.green, title: Text(widget.title)),
+      body: SafeArea(
+        child: Container(
+          child: ListView.builder(
+            itemCount: Recipe.samples.length,
+            itemBuilder: (BuildContext context, int index) {
+              // itemBuilder will work as for loop to generate list item
+              // return a widget for each item list
+              // return buildRecipeCard(Recipe.samples[index]);
+              return GestureDetector(
+                // Handle recipe card Tap
+                onTap: () {
+                  //print((Recipe.samples[index].imgTitle));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RecipeDetail(recipe: Recipe.samples[index]),
+                    ),
+                  );
+                },
+                child: buildRecipeCard(Recipe.samples[index]),
+              );
+            },
+          ), //call functions
         ),
-      )
       ),
     );
   }
 
   Widget buildRecipeCard(Recipe recipe) {
     return Card(
-      child: Column(
-        children: <Widget>[
-          Image(image: AssetImage(recipe.imgUrl)),
-          Text(recipe.imgTitle),
-        ],
+      elevation: 2.0, // 10.0
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: <Widget>[
+            Image(image: AssetImage(recipe.imgUrl)),
+            SizedBox(height: 8.0),
+            Text(
+              recipe.imgTitle,
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
+  }
 }
-}
-// Hello World
 
+// Hello World
