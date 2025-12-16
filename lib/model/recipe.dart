@@ -1,31 +1,25 @@
+import 'package:receipes/model/ingredient.dart';
+
 class Recipe {
   String imgUrl;
   String imgTitle;
-  String description;
+  List<Ingredient> ingredients;
 
-  Recipe(this.imgUrl,this.imgTitle, this.description);
+  Recipe(this.imgUrl,this.imgTitle, this.ingredients);
 
   static List<Recipe> samples = [
     Recipe(
-        'assets/images/3910.webp',
-        'Basil Lemon Cooler',
-        'A refreshing drink made with fresh basil leaves, lemon juice, and sparkling water',
+      'assets/images/Aubergine_Thai_jungle_curry.png','Jungle Curry',
+      [
+        Ingredient(name: 'Aubergines', quantity: 2, unit: ''),
+        Ingredient(name: 'Jungle curry paste', quantity: 2, unit: 'tbsp'),
+        Ingredient(name: 'Vegetable stock', quantity: 2, unit: 'cups'),
+        Ingredient(name: 'Kaffir lime leaves', quantity: 3, unit: ''),
+        Ingredient(name: 'Thai chilies', quantity: 2, unit: ''),
+        Ingredient(name: 'Fish sauce', quantity: 1, unit: 'tbsp'),
+        Ingredient(name: 'Thai basil', quantity: 1, unit: 'handful'),
+      ],
     ),
-    Recipe(
-        'assets/images/200304_Olive_PadThai-ebe0f22-scaled.webp',
-        'Shrimp Pad Thai',
-        'A classic Thai stir-fried noodle dish with juicy shrimp, rice noodles, eggs, and bean sprouts',
-    ),
-    Recipe(
-        'assets/images/OLI-0519-Healthy_GreenThaiFishCurry_32208-c3cee9a.webp',
-        'Green thai Curry',
-        'A rich and creamy green curry made with aromatic Thai herbs, coconut milk, and tender fish.',
-    ),
-    Recipe(
-        'assets/images/p1.webp',
-        'pumbkincurry',
-        'A comforting Thai-style pumpkin curry cooked slowly in coconut milk with fragrant spices.',
-     ),
   ];
 }
 
